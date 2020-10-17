@@ -8,12 +8,15 @@ import { createFirestoreInstance } from 'redux-firestore'
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
 import firebase from "firebase/app";
 
-
 import store from './store/store' 
 
 const rrfConfig = {
+  useFirestoreForProfile: true,
   userProfile: 'users',
+  enableRedirectHandling: false,
+  resetBeforeLogin: false
 }
+
 const rrfProps = {
   firebase,
   config: rrfConfig,
@@ -33,3 +36,5 @@ ReactDOM.render(
 )
 
 serviceWorker.unregister()
+
+
